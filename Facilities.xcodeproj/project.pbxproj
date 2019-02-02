@@ -122,18 +122,15 @@
 		5296C5622203B0C800CD199B /* Facilities */ = {
 			isa = PBXGroup;
 			children = (
+				5296C5A02205427D00CD199B /* Controller */,
 				5296C5992204E0BA00CD199B /* View */,
 				5296C58E2204C14000CD199B /* Model */,
 				5296C5632203B0C800CD199B /* AppDelegate.swift */,
-				5296C5652203B0C800CD199B /* ViewController.swift */,
 				5296C5672203B0C800CD199B /* Main.storyboard */,
 				5296C56D2203B0CA00CD199B /* Assets.xcassets */,
 				5296C56F2203B0CA00CD199B /* LaunchScreen.storyboard */,
 				5296C5722203B0CA00CD199B /* Info.plist */,
 				5296C56A2203B0C800CD199B /* Facilities.xcdatamodeld */,
-				5296C5862203B13A00CD199B /* ServiceTableViewCell.swift */,
-				5296C5872203B13A00CD199B /* ServiceTableViewCell.xib */,
-				5296C59E2205158700CD199B /* ServiceDetailsViewController.swift */,
 			);
 			path = Facilities;
 			sourceTree = "<group>";
@@ -163,9 +160,20 @@
 		5296C5992204E0BA00CD199B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5296C5862203B13A00CD199B /* ServiceTableViewCell.swift */,
+				5296C5872203B13A00CD199B /* ServiceTableViewCell.xib */,
 				5296C59A2204E0E300CD199B /* CardView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5296C5A02205427D00CD199B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5296C5652203B0C800CD199B /* ViewController.swift */,
+				5296C59E2205158700CD199B /* ServiceDetailsViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		86B4E664F36E5B364B7E4509 /* Pods */ = {
