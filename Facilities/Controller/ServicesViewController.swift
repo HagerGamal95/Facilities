@@ -11,17 +11,34 @@ import SDWebImage
 
 class ServicesViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
     
+    @IBOutlet weak var errorView: UIView!
     var selectedCell : Int?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var serviceTableView: UITableView!
+    @IBOutlet weak var errorLabel: UILabel!
     
     var services : [Data]?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Facilities"
+        setupUI()
+        loadData()
+    }
+    
+    // MARK:- Prepare For Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToDetails"
+        {
+            if let serviceDetailsViewcontroller = segue.destination as? ServiceDetailsViewController{
+                serviceDetailsViewcontroller.service = self.services?[selectedCell ?? 0]
+            }
+        }
+    }
+    
+    func setupUI(){
+        self.navigationItem.title = NSLocalizedString("pageTitle", comment: "")
         
         let backItem = UIBarButtonItem()
         backItem.title = ""
@@ -30,24 +47,28 @@ class ServicesViewController: UIViewController , UITableViewDelegate , UITableVi
         serviceTableView.register(UINib(nibName: "ServiceTableViewCell", bundle: nil), forCellReuseIdentifier: "myDataCell")
         self.serviceTableView.dataSource = self
         self.serviceTableView.delegate = self
+    }
+    
+    func loadData() {
+        self.errorView.isHidden = true
+        self.serviceTableView.isHidden = true
+        self.activityIndicator.startAnimating()
+        
         NetworkService.shared.getServices(pageSize: 10, pageIndex: 1, departmentNumber: 2) { data , error in
-            if data != nil {
+            self.activityIndicator.stopAnimating()
+            
+            if data != nil && error == nil {
                 self.services = (data?.data)!
-                self.activityIndicator.hidesWhenStopped=true
-                self.activityIndicator.stopAnimating()
+                
+                self.errorView.isHidden = true
+                self.serviceTableView.isHidden = false
                 self.serviceTableView.reloadData {
                     self.animateTable()
                 }
-            }
-        }
-    }
-    // MARK:- Prepare For Segue
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToDetails"
-        {
-            if let serviceDetailsViewcontroller = segue.destination as? ServiceDetailsViewController{
-                serviceDetailsViewcontroller.service = self.services?[selectedCell ?? 0]
+            }else{
+                self.errorLabel.text = NSLocalizedString("error", comment: "")
+                self.errorView.isHidden = false
+                self.serviceTableView.isHidden = true
             }
         }
     }
@@ -74,6 +95,13 @@ class ServicesViewController: UIViewController , UITableViewDelegate , UITableVi
             index += 1
         }
     }
+    
+    // MARK :- actions
+    
+    @IBAction func retryButtonDidTapped(_ sender: Any) {
+        loadData()
+    }
+    
     // MARK:- Table Data Source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -105,5 +133,5 @@ class ServicesViewController: UIViewController , UITableViewDelegate , UITableVi
             cell.alpha = 1.0
         }
     }
-  
+    
 }

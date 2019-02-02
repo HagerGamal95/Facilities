@@ -18,7 +18,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M0o-Gi-Gud">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8HP-6P-YRH">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J9d-c9-MDF">
+                                        <rect key="frame" x="20" y="299.33333333333331" width="335" height="92.333333333333314"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vie-aZ-fFB">
+                                                <rect key="frame" x="145" y="0.0" width="45" height="27.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovA-Dp-aKv">
+                                                <rect key="frame" x="67.666666666666686" y="47.333333333333371" width="200" height="45"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="MMg-e5-EeQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
+                                                <state key="normal" title="retry">
+                                                    <color key="titleColor" red="0.086274509803921567" green="0.41568627450980394" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="retryButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x3C-MA-ACD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="J9d-c9-MDF" firstAttribute="centerY" secondItem="8HP-6P-YRH" secondAttribute="centerY" id="VoC-Ij-fkS"/>
+                                    <constraint firstAttribute="trailing" secondItem="J9d-c9-MDF" secondAttribute="trailing" constant="20" id="fB0-V3-ccF"/>
+                                    <constraint firstItem="J9d-c9-MDF" firstAttribute="leading" secondItem="8HP-6P-YRH" secondAttribute="leading" constant="20" id="zYT-kk-ROO"/>
+                                </constraints>
+                            </view>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M0o-Gi-Gud">
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -34,16 +75,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Rky-Xd-Ddq">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Rky-Xd-Ddq">
                                 <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.058823529411764705" green="0.46666666666666667" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Rky-Xd-Ddq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8IA-ZV-09T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8HP-6P-YRH" secondAttribute="bottom" id="99C-9U-Zkb"/>
+                            <constraint firstItem="8HP-6P-YRH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GP9-SG-bMY"/>
                             <constraint firstItem="Rky-Xd-Ddq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JzS-lc-Lm9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M0o-Gi-Gud" secondAttribute="trailing" id="eNc-yx-lmR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="M0o-Gi-Gud" secondAttribute="bottom" id="fa7-U9-gic"/>
+                            <constraint firstItem="8HP-6P-YRH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gvf-7U-ZGm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8HP-6P-YRH" secondAttribute="trailing" id="kcM-8i-MiK"/>
                             <constraint firstItem="M0o-Gi-Gud" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sHR-5O-wpv"/>
                             <constraint firstItem="M0o-Gi-Gud" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yKH-Vp-BTc"/>
                         </constraints>
@@ -54,6 +99,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="Rky-Xd-Ddq" id="wK0-jH-Xml"/>
+                        <outlet property="errorLabel" destination="Vie-aZ-fFB" id="RzJ-ln-IZQ"/>
+                        <outlet property="errorView" destination="8HP-6P-YRH" id="G2g-CH-EMY"/>
                         <outlet property="serviceTableView" destination="M0o-Gi-Gud" id="m2B-Mq-p92"/>
                         <segue destination="MCB-RG-7Nh" kind="show" identifier="goToDetails" id="ZQZ-fj-kc8"/>
                     </connections>

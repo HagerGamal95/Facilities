@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Facilities
+
+  Created by hager on 2/2/19.
+  Copyright © 2019 Vodafone. All rights reserved.
+*/
+
+"prerequisitesTitle" = "Prerequisites";
+"requiredDocTitle" = "Requires Document";
+"feesTitle" = "Fees";
+"timeFreeTitle" = "Time Frame";
+"channelsTitle" = "Service Channels";
+"pageTitle" = "Facilities";
+"error" = "An Error Occurred!";

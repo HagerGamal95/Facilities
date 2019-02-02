@@ -13,22 +13,29 @@ typealias JSON = [String : Any]
 
 class NetworkService {
     
+    static let kBaseURL = "https://dhcr.gov.ae/MobileWebAPI/api/Common/"
+    
     static let shared = NetworkService()
     
     private init() {}
     
     func getServices(pageSize : Int , pageIndex : Int , departmentNumber : Int , completion : @escaping (Response? , Error? )->Void)
     {
-        let dict : [String : String] = ["PageSize": String(pageSize) ,
-                                        "PageIndex" : String(pageIndex) ,
-                                        "DepartmentID" : String(departmentNumber)]
+        let url = String(format: "%@%@", NetworkService.kBaseURL, "ServiceCatalogue/GetDepartmentServices")
         
         //        let headers = ["Content-Type" : "application/json","Accept" : "application/json", "Authorization" : bear]
         
-        Alamofire.request("https://dhcr.gov.ae/MobileWebAPI/api/Common/ServiceCatalogue/GetDepartmentServices", method: .post, parameters: dict , encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+        let parameters : [String : String] = ["PageSize": String(pageSize) ,
+                                              "PageIndex" : String(pageIndex) ,
+                                              "DepartmentID" : String(departmentNumber)]
+        let generalError = NSError()
+        Alamofire.request(url, method: .post, parameters: parameters , encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+            response.result.ifFailure {
+                completion(nil , generalError)
+            }
             response.result.ifSuccess {
                 if let responseData = response.data {
-                    do{
+                    do {
                         let decoder = JSONDecoder()
                         let response = try decoder.decode(Response.self, from: responseData)
                         completion(response , nil)
@@ -36,10 +43,11 @@ class NetworkService {
                         let error = NSError()
                         completion(nil , error)
                     }
+                } else {
+                    let error = NSError()
+                    completion(nil , error)
                 }
             }
-            
-            
         }
     }
 }

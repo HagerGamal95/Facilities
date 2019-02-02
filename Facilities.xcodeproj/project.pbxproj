@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		525C344F22064565007ABC33 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 525C344E22064565007ABC33 /* Localizable.strings */; };
 		5296C5642203B0C800CD199B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5296C5632203B0C800CD199B /* AppDelegate.swift */; };
 		5296C5692203B0C800CD199B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5296C5672203B0C800CD199B /* Main.storyboard */; };
 		5296C56C2203B0C800CD199B /* Facilities.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5296C56A2203B0C800CD199B /* Facilities.xcdatamodeld */; };
@@ -41,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		19C3D45DD0FADFEB2D2BBA95 /* Pods-Facilities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Facilities.release.xcconfig"; path = "Pods/Target Support Files/Pods-Facilities/Pods-Facilities.release.xcconfig"; sourceTree = "<group>"; };
+		525C344D22064402007ABC33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		525C344E22064565007ABC33 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		5296C5602203B0C800CD199B /* Facilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Facilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5296C5632203B0C800CD199B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5296C5682203B0C800CD199B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -134,6 +137,7 @@
 				5296C56F2203B0CA00CD199B /* LaunchScreen.storyboard */,
 				5296C5722203B0CA00CD199B /* Info.plist */,
 				5296C56A2203B0C800CD199B /* Facilities.xcdatamodeld */,
+				525C344E22064565007ABC33 /* Localizable.strings */,
 			);
 			path = Facilities;
 			sourceTree = "<group>";
@@ -285,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525C344F22064565007ABC33 /* Localizable.strings in Resources */,
 				5296C5712203B0CA00CD199B /* LaunchScreen.storyboard in Resources */,
 				5296C5892203B13A00CD199B /* ServiceTableViewCell.xib in Resources */,
 				5296C56E2203B0CA00CD199B /* Assets.xcassets in Resources */,
@@ -449,6 +454,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5296C5682203B0C800CD199B /* Base */,
+				525C344D22064402007ABC33 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
