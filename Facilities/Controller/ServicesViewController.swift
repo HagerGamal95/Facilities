@@ -23,6 +23,10 @@ class ServicesViewController: UIViewController , UITableViewDelegate , UITableVi
         
         self.navigationItem.title = "Facilities"
         
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+        
         serviceTableView.register(UINib(nibName: "ServiceTableViewCell", bundle: nil), forCellReuseIdentifier: "myDataCell")
         self.serviceTableView.dataSource = self
         self.serviceTableView.delegate = self
@@ -40,9 +44,6 @@ class ServicesViewController: UIViewController , UITableViewDelegate , UITableVi
     // MARK:- Prepare For Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let backItem = UIBarButtonItem()
-        backItem.title = ""
-        navigationItem.backBarButtonItem = backItem
         if segue.identifier == "goToDetails"
         {
             if let serviceDetailsViewcontroller = segue.destination as? ServiceDetailsViewController{
