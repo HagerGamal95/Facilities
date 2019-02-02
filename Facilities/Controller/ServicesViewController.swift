@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
+class ServicesViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
     
     var selectedCell : Int?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -17,10 +17,10 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
     
     var services : [Data]?
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-         
+        
         self.navigationItem.title = "Facilities"
         
         serviceTableView.register(UINib(nibName: "ServiceTableViewCell", bundle: nil), forCellReuseIdentifier: "myDataCell")
@@ -96,7 +96,7 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedCell = indexPath.row
         performSegue(withIdentifier: "goToDetails", sender: self)
-        }
+    }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.alpha = 0
@@ -104,14 +104,5 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
             cell.alpha = 1.0
         }
     }
-   
-
-    
-}
-
-extension UITableView {
-    func reloadData(completion: @escaping ()->()) {
-        UIView.animate(withDuration: 0, animations: { self.reloadData() })
-        { _ in completion() }
-    }
+  
 }

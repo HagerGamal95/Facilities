@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5296C5642203B0C800CD199B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5296C5632203B0C800CD199B /* AppDelegate.swift */; };
-		5296C5662203B0C800CD199B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5296C5652203B0C800CD199B /* ViewController.swift */; };
 		5296C5692203B0C800CD199B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5296C5672203B0C800CD199B /* Main.storyboard */; };
 		5296C56C2203B0C800CD199B /* Facilities.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5296C56A2203B0C800CD199B /* Facilities.xcdatamodeld */; };
 		5296C56E2203B0CA00CD199B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5296C56D2203B0CA00CD199B /* Assets.xcassets */; };
@@ -24,6 +23,8 @@
 		5296C5982204C16100CD199B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5296C5932204C16100CD199B /* Response.swift */; };
 		5296C59B2204E0E300CD199B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5296C59A2204E0E300CD199B /* CardView.swift */; };
 		5296C59F2205158700CD199B /* ServiceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5296C59E2205158700CD199B /* ServiceDetailsViewController.swift */; };
+		5296C5A822054ECC00CD199B /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5296C5A722054ECC00CD199B /* ServicesViewController.swift */; };
+		5296C5AB22054F4900CD199B /* TableViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5296C5AA22054F4900CD199B /* TableViewExtention.swift */; };
 		CF4442F3D377B988928E319A /* Pods_Facilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A624691253476E9561BA1864 /* Pods_Facilities.framework */; };
 		E1FFB76D463E21132C97D8C8 /* Pods_FacilitiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4550B07D97225A2AA5CB64 /* Pods_FacilitiesTests.framework */; };
 /* End PBXBuildFile section */
@@ -42,7 +43,6 @@
 		19C3D45DD0FADFEB2D2BBA95 /* Pods-Facilities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Facilities.release.xcconfig"; path = "Pods/Target Support Files/Pods-Facilities/Pods-Facilities.release.xcconfig"; sourceTree = "<group>"; };
 		5296C5602203B0C800CD199B /* Facilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Facilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5296C5632203B0C800CD199B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5296C5652203B0C800CD199B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5296C5682203B0C800CD199B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5296C56B2203B0C800CD199B /* Facilities.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Facilities.xcdatamodel; sourceTree = "<group>"; };
 		5296C56D2203B0CA00CD199B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +62,8 @@
 		5296C5932204C16100CD199B /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		5296C59A2204E0E300CD199B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		5296C59E2205158700CD199B /* ServiceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsViewController.swift; sourceTree = "<group>"; };
+		5296C5A722054ECC00CD199B /* ServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
+		5296C5AA22054F4900CD199B /* TableViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtention.swift; sourceTree = "<group>"; };
 		99C5597295DD8D3C6AEBD691 /* Pods-Facilities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Facilities.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Facilities/Pods-Facilities.debug.xcconfig"; sourceTree = "<group>"; };
 		A624691253476E9561BA1864 /* Pods_Facilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Facilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA4550B07D97225A2AA5CB64 /* Pods_FacilitiesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacilitiesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 		5296C5622203B0C800CD199B /* Facilities */ = {
 			isa = PBXGroup;
 			children = (
+				5296C5A922054F2800CD199B /* Helper */,
 				5296C5A02205427D00CD199B /* Controller */,
 				5296C5992204E0BA00CD199B /* View */,
 				5296C58E2204C14000CD199B /* Model */,
@@ -170,10 +173,18 @@
 		5296C5A02205427D00CD199B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5296C5652203B0C800CD199B /* ViewController.swift */,
 				5296C59E2205158700CD199B /* ServiceDetailsViewController.swift */,
+				5296C5A722054ECC00CD199B /* ServicesViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5296C5A922054F2800CD199B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5296C5AA22054F4900CD199B /* TableViewExtention.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		86B4E664F36E5B364B7E4509 /* Pods */ = {
@@ -400,12 +411,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5296C58B2204975B00CD199B /* NetworkService.swift in Sources */,
-				5296C5662203B0C800CD199B /* ViewController.swift in Sources */,
 				5296C5882203B13A00CD199B /* ServiceTableViewCell.swift in Sources */,
 				5296C5952204C16100CD199B /* SubServices.swift in Sources */,
 				5296C5982204C16100CD199B /* Response.swift in Sources */,
 				5296C5962204C16100CD199B /* AssistingDocumentURL.swift in Sources */,
 				5296C56C2203B0C800CD199B /* Facilities.xcdatamodeld in Sources */,
+				5296C5A822054ECC00CD199B /* ServicesViewController.swift in Sources */,
+				5296C5AB22054F4900CD199B /* TableViewExtention.swift in Sources */,
 				5296C5642203B0C800CD199B /* AppDelegate.swift in Sources */,
 				5296C59F2205158700CD199B /* ServiceDetailsViewController.swift in Sources */,
 				5296C5972204C16100CD199B /* Data.swift in Sources */,
